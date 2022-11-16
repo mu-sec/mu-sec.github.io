@@ -20,31 +20,50 @@
     var CONFIG = {"hostname":"mu-sec.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="每天都要创造一点快乐">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Why am I such a vegetable?">
-<meta property="og:url" content="https://mu-sec.github.io/index.html">
+  <meta name="description" content="引言　　由于最近又需要重新复习pwn，但是之前的老电脑跑起来像一台拖拉机一样所以考虑尝试在Mac上搭建一套可以完美（并不）使用的pwn环境，思路依然是虚拟机+目录共享。　　众所周知由于M1换了架构，所以x86的程序在本地根本跑不起来，参考之前大佬的的方法搭建了python2和python3两个docker环境，可以跑exp打远程，本地无法调试，显然不符合需求，优点是性能强，共享目录方便，确实是适合">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mac&amp;M1本地非docker可调试PWN环境搭建">
+<meta property="og:url" content="https://mu-sec.github.io/2022/11/16/Mac-M1%E6%9C%AC%E5%9C%B0%E9%9D%9Edocker%E5%8F%AF%E8%B0%83%E8%AF%95PWN%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.html">
 <meta property="og:site_name" content="Why am I such a vegetable?">
-<meta property="og:description" content="每天都要创造一点快乐">
+<meta property="og:description" content="引言　　由于最近又需要重新复习pwn，但是之前的老电脑跑起来像一台拖拉机一样所以考虑尝试在Mac上搭建一套可以完美（并不）使用的pwn环境，思路依然是虚拟机+目录共享。　　众所周知由于M1换了架构，所以x86的程序在本地根本跑不起来，参考之前大佬的的方法搭建了python2和python3两个docker环境，可以跑exp打远程，本地无法调试，显然不符合需求，优点是性能强，共享目录方便，确实是适合">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://mu-sec.github.io/2022/11/16/Mac-M1%E6%9C%AC%E5%9C%B0%E9%9D%9Edocker%E5%8F%AF%E8%B0%83%E8%AF%95PWN%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/%E9%85%8D%E7%BD%AE.jpg">
+<meta property="og:image" content="https://mu-sec.github.io/2022/11/16/Mac-M1%E6%9C%AC%E5%9C%B0%E9%9D%9Edocker%E5%8F%AF%E8%B0%83%E8%AF%95PWN%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/utm.jpg">
+<meta property="og:image" content="https://mu-sec.github.io/2022/11/16/Mac-M1%E6%9C%AC%E5%9C%B0%E9%9D%9Edocker%E5%8F%AF%E8%B0%83%E8%AF%95PWN%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/ubuntu.jpg">
+<meta property="og:image" content="https://mu-sec.github.io/2022/11/16/Mac-M1%E6%9C%AC%E5%9C%B0%E9%9D%9Edocker%E5%8F%AF%E8%B0%83%E8%AF%95PWN%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/UTM1.jpg">
+<meta property="og:image" content="https://mu-sec.github.io/2022/11/16/Mac-M1%E6%9C%AC%E5%9C%B0%E9%9D%9Edocker%E5%8F%AF%E8%B0%83%E8%AF%95PWN%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/UTM2.jpg">
+<meta property="og:image" content="https://mu-sec.github.io/2022/11/16/Mac-M1%E6%9C%AC%E5%9C%B0%E9%9D%9Edocker%E5%8F%AF%E8%B0%83%E8%AF%95PWN%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/UTM3.jpg">
+<meta property="og:image" content="https://mu-sec.github.io/2022/11/16/Mac-M1%E6%9C%AC%E5%9C%B0%E9%9D%9Edocker%E5%8F%AF%E8%B0%83%E8%AF%95PWN%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/UTM4.jpg">
+<meta property="og:image" content="https://mu-sec.github.io/2022/11/16/Mac-M1%E6%9C%AC%E5%9C%B0%E9%9D%9Edocker%E5%8F%AF%E8%B0%83%E8%AF%95PWN%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/UTM5.jpg">
+<meta property="og:image" content="https://mu-sec.github.io/2022/11/16/Mac-M1%E6%9C%AC%E5%9C%B0%E9%9D%9Edocker%E5%8F%AF%E8%B0%83%E8%AF%95PWN%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/UTM6.jpg">
+<meta property="og:image" content="https://mu-sec.github.io/2022/11/16/Mac-M1%E6%9C%AC%E5%9C%B0%E9%9D%9Edocker%E5%8F%AF%E8%B0%83%E8%AF%95PWN%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/UTM7.jpg">
+<meta property="og:image" content="https://mu-sec.github.io/2022/11/16/Mac-M1%E6%9C%AC%E5%9C%B0%E9%9D%9Edocker%E5%8F%AF%E8%B0%83%E8%AF%95PWN%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/ip.jpg">
+<meta property="og:image" content="https://mu-sec.github.io/2022/11/16/Mac-M1%E6%9C%AC%E5%9C%B0%E9%9D%9Edocker%E5%8F%AF%E8%B0%83%E8%AF%95PWN%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/UTM8.jpg">
+<meta property="og:image" content="https://mu-sec.github.io/2022/11/16/Mac-M1%E6%9C%AC%E5%9C%B0%E9%9D%9Edocker%E5%8F%AF%E8%B0%83%E8%AF%95PWN%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/share1.jpg">
+<meta property="og:image" content="https://mu-sec.github.io/2022/11/16/Mac-M1%E6%9C%AC%E5%9C%B0%E9%9D%9Edocker%E5%8F%AF%E8%B0%83%E8%AF%95PWN%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/share2.jpg">
+<meta property="og:image" content="https://mu-sec.github.io/2022/11/16/Mac-M1%E6%9C%AC%E5%9C%B0%E9%9D%9Edocker%E5%8F%AF%E8%B0%83%E8%AF%95PWN%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/lock.jpg">
+<meta property="og:image" content="https://mu-sec.github.io/2022/11/16/Mac-M1%E6%9C%AC%E5%9C%B0%E9%9D%9Edocker%E5%8F%AF%E8%B0%83%E8%AF%95PWN%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/pass.jpg">
+<meta property="article:published_time" content="2022-11-16T09:16:57.000Z">
+<meta property="article:modified_time" content="2022-11-16T10:14:31.563Z">
 <meta property="article:author" content="mu">
-<meta property="article:tag" content="Caiji Study Blogs">
+<meta property="article:tag" content="pwn">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://mu-sec.github.io/2022/11/16/Mac-M1%E6%9C%AC%E5%9C%B0%E9%9D%9Edocker%E5%8F%AF%E8%B0%83%E8%AF%95PWN%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/%E9%85%8D%E7%BD%AE.jpg">
 
-<link rel="canonical" href="https://mu-sec.github.io/">
+<link rel="canonical" href="https://mu-sec.github.io/2022/11/16/Mac-M1%E6%9C%AC%E5%9C%B0%E9%9D%9Edocker%E5%8F%AF%E8%B0%83%E8%AF%95PWN%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>Why am I such a vegetable?</title>
+  <title>Mac&M1本地非docker可调试PWN环境搭建 | Why am I such a vegetable?</title>
   
 
 
@@ -142,9 +161,10 @@
         <div class="content-wrap">
           
 
-          <div class="content index posts-expand">
+          <div class="content post posts-expand">
             
-      
+
+    
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
@@ -160,10 +180,9 @@
       <meta itemprop="name" content="Why am I such a vegetable?">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/11/16/Mac-M1%E6%9C%AC%E5%9C%B0%E9%9D%9Edocker%E5%8F%AF%E8%B0%83%E8%AF%95PWN%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" class="post-title-link" itemprop="url">Mac&M1本地非docker可调试PWN环境搭建</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          Mac&M1本地非docker可调试PWN环境搭建
+        </h1>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -187,7 +206,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>　　由于最近又需要重新复习pwn，但是之前的老电脑跑起来像一台拖拉机一样所以考虑尝试在Mac上搭建一套可以<strong>完美（并不）使用</strong>的pwn环境，思路依然是虚拟机+目录共享。<br>　　众所周知由于M1换了架构，所以x86的程序在本地根本跑不起来，参考之前大佬的的方法搭建了python2和python3两个docker环境，可以跑exp打远程，本地无法调试，显然不符合需求，优点是性能强，共享目录方便，确实是适合救急用，所以平时我会专门开一个桌面用于这两个docker pwn环境，细节可以参考大佬博客。<br>　　<code>https://blog.csdn.net/qq_25755011/article/details/115541221</code><br>　　短暂使用过后发现还是搭一个完美（并不）的环境靠谱，于是开始了折腾之路。</p>
+        <h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>　　由于最近又需要重新复习pwn，但是之前的老电脑跑起来像一台拖拉机一样所以考虑尝试在Mac上搭建一套可以<strong>完美（并不）使用</strong>的pwn环境，思路依然是虚拟机+目录共享。<br>　　众所周知由于M1换了架构，所以x86的程序在本地根本跑不起来，参考之前大佬的的方法搭建了python2和python3两个docker环境，可以跑exp打远程，本地无法调试，显然不符合需求，优点是性能强，共享目录方便，确实是适合救急用，所以平时我会专门开一个桌面用于这两个docker pwn环境，细节可以参考大佬博客。<br>　　<code>https://blog.csdn.net/qq_25755011/article/details/115541221</code><br>　　短暂使用过后发现还是搭一个完美（并不）的环境靠谱，于是开始了折腾之路。</p>
 <p><em><strong>注意：本方法对虚拟机性能会造成较大损失，请根据个人需求判断是否可以接受</strong></em></p>
 <h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>　　首先放一下我的配置，M1 pro 32g内存，已更macOS 13。</p>
 <div align="center">
@@ -314,21 +333,26 @@
 <h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>　　自此，你就拥有了一个X86架构的pwn环境，只需要在比赛前提前打开虚拟机，宿主机远程连接使用，赛题通过共享文件夹同步，pwn环境配置不再赘述，大佬们写了很多，可以自己选择搭配自己的环境。</p>
 <h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>　　就个人使用而言，我感觉虽然有些卡顿，但是足以满足日常使用，各位大佬有更好的方法也欢迎分享跟我，目前这是我能想到的一个笔记本实现pwn环境的最优解。</p>
 
-      
     </div>
 
     
     
     
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
+          <div class="post-tags">
+              <a href="/tags/pwn/" rel="tag"># pwn</a>
+          </div>
+
+        
+
+
+        
       </footer>
+    
   </article>
   
   
-  
-
-
   
 
 
@@ -381,6 +405,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%95%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">引言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE"><span class="nav-number">2.</span> <span class="nav-text">配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E8%99%9A%E6%8B%9F%E6%9C%BA"><span class="nav-number">3.</span> <span class="nav-text">安装虚拟机</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SSH%E8%BF%9E%E6%8E%A5"><span class="nav-number">4.</span> <span class="nav-text">SSH连接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%A4%B9"><span class="nav-number">5.</span> <span class="nav-text">配置共享文件夹</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0%E5%BC%80%E6%9C%BA%E5%85%8D%E5%AF%86%E8%87%AA%E5%8A%A8%E6%8C%82%E8%BD%BD"><span class="nav-number">6.</span> <span class="nav-text">实现开机免密自动挂载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%98%E5%8C%96"><span class="nav-number">7.</span> <span class="nav-text">优化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8"><span class="nav-number">8.</span> <span class="nav-text">使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8E%E8%AE%B0"><span class="nav-number">9.</span> <span class="nav-text">后记</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
