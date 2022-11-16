@@ -2,15 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://mu-sec.github.io/books/index.html</loc>
-    
-    <lastmod>2022-11-16</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://mu-sec.github.io/2022/11/16/Mac-M1%E6%9C%AC%E5%9C%B0%E9%9D%9Edocker%E5%8F%AF%E8%B0%83%E8%AF%95PWN%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</loc>
     
     <lastmod>2022-11-16</lastmod>
