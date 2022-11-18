@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://mu-sec.github.io/2022/11/18/%E5%85%B3%E4%BA%8EMac%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E6%96%87%E7%AB%A0%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9D%91%E7%82%B9%E8%AE%B0%E5%BD%95/</loc>
+    
+    <lastmod>2022-11-18</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://mu-sec.github.io/2022/11/16/Mac-M1%E6%9C%AC%E5%9C%B0%E9%9D%9Edocker%E5%8F%AF%E8%B0%83%E8%AF%95PWN%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</loc>
     
     <lastmod>2022-11-16</lastmod>
@@ -13,7 +22,7 @@
 
   <url>
     <loc>https://mu-sec.github.io/</loc>
-    <lastmod>2022-11-16</lastmod>
+    <lastmod>2022-11-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -21,7 +30,7 @@
   
   <url>
     <loc>https://mu-sec.github.io/tags/pwn/</loc>
-    <lastmod>2022-11-16</lastmod>
+    <lastmod>2022-11-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>

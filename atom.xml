@@ -6,7 +6,7 @@
   <link href="https://mu-sec.github.io/atom.xml" rel="self"/>
   
   <link href="https://mu-sec.github.io/"/>
-  <updated>2022-11-16T10:14:31.563Z</updated>
+  <updated>2022-11-18T11:16:48.894Z</updated>
   <id>https://mu-sec.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>关于Mac环境搭建文章的一些坑点记录</title>
+    <link href="https://mu-sec.github.io/2022/11/18/%E5%85%B3%E4%BA%8EMac%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E6%96%87%E7%AB%A0%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9D%91%E7%82%B9%E8%AE%B0%E5%BD%95/"/>
+    <id>https://mu-sec.github.io/2022/11/18/%E5%85%B3%E4%BA%8EMac%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E6%96%87%E7%AB%A0%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9D%91%E7%82%B9%E8%AE%B0%E5%BD%95/</id>
+    <published>2022-11-18T11:07:02.000Z</published>
+    <updated>2022-11-18T11:16:48.894Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="坑点一"><a href="#坑点一" class="headerlink" title="坑点一"></a>坑点一</h2><p>正常使用时发现，开机自动装载后，将一些题目文件直接在宿主机中放到共享文件夹时，在虚拟机中并不能实时更新，有以下两种解决方法：<br>1.在虚拟机中使用mkdir新建目录，随后将需要共享的文件放进新目录，这样强制进行更新，但是比较麻烦。<br>2.重新挂载，为了更简单的解决这一步，我写了一个shell脚本</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line">#refresh the share dir</span><br><span class="line">sudo umount /home/mu/mac-share</span><br><span class="line">sudo mount -t davfs http://localhost:9843 /home/mu/mac-share &amp;&amp; echo &quot;刷新mac-share成功&quot;</span><br><span class="line"></span><br></pre></td></tr></table></figure><p>然后将它移到bin下</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#sudo cp refresh /usr/bin/refresh</span><br><span class="line"></span><br></pre></td></tr></table></figure><p>这样每次直接在终端输入refresh，就可以刷新共享目录，完成实时同步。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;坑点一&quot;&gt;&lt;a href=&quot;#坑点一&quot; class=&quot;headerlink&quot; title=&quot;坑点一&quot;&gt;&lt;/a&gt;坑点一&lt;/h2&gt;&lt;p&gt;正常使用时发现，开机自动装载后，将一些题目文件直接在宿主机中放到共享文件夹时，在虚拟机中并不能实时更新，有以下两种解决方法：&lt;br&gt;</summary>
+      
+    
+    
+    
+    
+    <category term="pwn" scheme="https://mu-sec.github.io/tags/pwn/"/>
+    
+  </entry>
   
   <entry>
     <title>Mac&amp;M1本地非docker可调试PWN环境搭建</title>
