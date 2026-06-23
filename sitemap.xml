@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://mu-sec.github.io/tags/index.html</loc>
+    
+    <lastmod>2026-06-23</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://mu-sec.github.io/2026/06/23/%E9%98%B4%E6%B2%9F%E9%87%8C%E7%BF%BB%E8%88%B9-%E4%B8%80%E6%AC%A1macOS-Odyssey-ClickFix%E6%84%9F%E6%9F%93%E5%A4%8D%E7%9B%98/</loc>
     
     <lastmod>2026-06-23</lastmod>

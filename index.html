@@ -1,432 +1,164 @@
-<!DOCTYPE html>
-<html lang=zh>
+<!doctype html>
+<html lang="zh-CN">
 <head>
-  <meta name="google-site-verification" content="53o10_YdcKB4Y8Hhy_6d2UwfhWKBbl9gcM3_3qrWIU0" />
   <meta charset="utf-8">
-  
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
-  <meta name="renderer" content="webkit">
-  <meta http-equiv="Cache-Control" content="no-transform" />
-  <meta http-equiv="Cache-Control" content="no-siteapp" />
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="format-detection" content="telephone=no,email=no,adress=no">
-  <!-- Color theme for statusbar -->
-  <meta name="theme-color" content="#000000" />
-  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
-  <meta http-equiv="window-target" content="_top" />
-  
-  
-  <title>mu&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Why am I such a vegetable?</title>
   <meta name="description" content="每天都要创造一点快乐">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Why am I such a vegetable?">
-<meta property="og:url" content="https://mu-sec.github.io/index.html">
-<meta property="og:site_name" content="Why am I such a vegetable?">
-<meta property="og:description" content="每天都要创造一点快乐">
-<meta property="og:locale" content="zh_CN">
-<meta property="article:author" content="mu">
-<meta property="article:tag" content="Caiji Study Blogs">
-<meta name="twitter:card" content="summary">
-  <!-- Canonical links -->
+  <meta name="theme-color" content="#101418">
   <link rel="canonical" href="https://mu-sec.github.io/index.html">
-  
-    <link rel="alternate" href="/atom.xml" title="Why am I such a vegetable?" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/mlogo.jpg" type="image/x-icon">
-  
-  
-<link rel="stylesheet" href="/css/style.css">
-
-  
-  
-  
-  
+  <link rel="alternate" type="application/atom+xml" title="Why am I such a vegetable?" href="/atom.xml">
+  <link rel="icon" href="/images/favicon.jpg">
+  <meta property="og:title" content="Why am I such a vegetable?">
+  <meta property="og:site_name" content="Why am I such a vegetable?">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mu-sec.github.io/index.html">
+  <meta property="og:description" content="每天都要创造一点快乐">
+  <link rel="stylesheet" href="/css/mu.css">
 <meta name="generator" content="Hexo 8.1.2"></head>
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="/" aria-label="Why am I such a vegetable? home">
+        <span class="brand-mark">mu</span>
+        <span>
+          <span class="brand-name">mu</span>
+          <span class="brand-line">Security notes, reverse trails, and things worth remembering.</span>
+        </span>
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        
+          <a href="/">Posts</a>
+        
+          <a href="/archives/">Archives</a>
+        
+          <a href="/tags/">Tags</a>
+        
+          <a href="/atom.xml">RSS</a>
+        
+        <button class="theme-toggle js-theme-toggle" type="button" aria-label="Toggle color theme" title="Toggle theme">
+          <span class="theme-toggle-icon" aria-hidden="true"></span>
+        </button>
+      </nav>
+    </div>
+  </header>
 
-
-<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
-  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-  <div class="slimContent">
-    <div class="navbar-header">
+  <main id="content" class="site-main">
+    
+<section class="home-shell">
+  <aside class="profile-panel">
+    <img class="profile-avatar" src="/images/avatar.jpeg" alt="">
+    <div>
+      <p class="eyebrow">Research Log</p>
+      <h1>Why am I such a vegetable?</h1>
+      <p class="profile-bio">Security research notes, macOS forensics, pwn environments, and the occasional self-own.</p>
+    </div>
+    <dl class="site-stats">
+      <div><dt>Posts</dt><dd>3</dd></div>
+      <div><dt>Tags</dt><dd>4</dd></div>
       
+        <div><dt>Latest</dt><dd>2026-06-23</dd></div>
       
-      <div class="profile-block text-center">
-        <a id="avatar" href="https://github.com/mu-sec" target="_blank">
-          <img class="img-circle img-rotate" src="/images/nice.jpeg" width="200" height="200">
-        </a>
-        <h2 id="name" class="hidden-xs hidden-sm">mu</h2>
-        <h3 id="title" class="hidden-xs hidden-sm hidden-md">Dreamer</h3>
-        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> Qingdao, China</small>
+    </dl>
+    <div class="search-box">
+      <label for="site-search">Search notes</label>
+      <input id="site-search" class="js-search" type="search" placeholder="malware, pwn, macOS" autocomplete="off">
+      <div class="search-results js-search-results" hidden></div>
+    </div>
+    
+      <div class="tag-cloud">
+        
+          <a href="/tags/Malware/">#Malware</a>
+        
+          <a href="/tags/macOS/">#macOS</a>
+        
+          <a href="/tags/pwn/">#pwn</a>
+        
+          <a href="/tags/%E5%AE%89%E5%85%A8/">#安全</a>
+        
       </div>
+    
+  </aside>
+
+  <div class="home-feed">
+    <div class="section-heading">
+      <p class="eyebrow">Latest Notes</p>
+      <h2>Write-ups and field notes</h2>
+    </div>
+    
+<section class="post-list" aria-label="Posts">
+  
+  
+    <article class="post-card">
+      <div class="post-card-meta">
+        <time datetime="2026-06-23T12:19:11.000Z">2026-06-23</time>
+        
+          <span class="dot"></span>
+          <span>macOS / 安全 / Malware</span>
+        
+      </div>
+      <h2 class="post-card-title">
+        <a href="/2026/06/23/%E9%98%B4%E6%B2%9F%E9%87%8C%E7%BF%BB%E8%88%B9-%E4%B8%80%E6%AC%A1macOS-Odyssey-ClickFix%E6%84%9F%E6%9F%93%E5%A4%8D%E7%9B%98/">阴沟里翻船：一次 macOS Odyssey/ClickFix 感染复盘</a>
+      </h2>
       
-      <div class="search" id="search-form-wrap">
-
-    <form class="search-form sidebar-form">
-        <div class="input-group">
-            <input type="text" class="search-form-input form-control" placeholder="搜索" />
-            <span class="input-group-btn">
-                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
-            </span>
-        </div>
-    </form>
-    <div class="ins-search">
-  <div class="ins-search-mask"></div>
-  <div class="ins-search-container">
-    <div class="ins-input-wrapper">
-      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
-      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-    </div>
-    <div class="ins-section-wrapper">
-      <div class="ins-section-container"></div>
-    </div>
-  </div>
-</div>
-
-
-</div>
-      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-    </div>
-    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
-      <ul class="nav navbar-nav main-nav ">
-        
-        
-        <li class="menu-item menu-item-home">
-          <a href="/.">
-            
-            <i class="icon icon-home-fill"></i>
-            
-            <span class="menu-title">首页</span>
-          </a>
-        </li>
-        
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/archives">
-            
-            <i class="icon icon-archives-fill"></i>
-            
-            <span class="menu-title">归档</span>
-          </a>
-        </li>
-        
-      </ul>
       
-	
-    <ul class="social-links">
-    	
-        <li><a href="https://github.com/mu-sec" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        <p class="post-card-summary">引言好久没更新博客，一更新就是自己中招。 事情的起因是我让 Codex 帮我做了一次非侵入式安全检查，本来只是想看看 Mac 上有没有什么奇怪的后台、启动项、网络连接。结果在 /Library/LaunchDaemons/ 里翻出来一个非常不对劲的东西： 1/Library/LaunchDaemons/com.14622.plist 名字就很不 Apple，</p>
+      
+      <a class="read-link" href="/2026/06/23/%E9%98%B4%E6%B2%9F%E9%87%8C%E7%BF%BB%E8%88%B9-%E4%B8%80%E6%AC%A1macOS-Odyssey-ClickFix%E6%84%9F%E6%9F%93%E5%A4%8D%E7%9B%98/" aria-label="Read 阴沟里翻船：一次 macOS Odyssey/ClickFix 感染复盘">Read note</a>
+    </article>
+  
+    <article class="post-card">
+      <div class="post-card-meta">
+        <time datetime="2022-11-18T11:07:02.000Z">2022-11-18</time>
         
-    </ul>
-
-    </nav>
-  </div>
-</header>
-
-  
-    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
-  <div class="slimContent">
-    
-      <div class="widget">
-    <h3 class="widget-title">公告</h3>
-    <div class="widget-body">
-        <div id="board">
-            <div class="content">
-                <p>Unconstructed dream space.</p>
-            </div>
-        </div>
-    </div>
-</div>
-
-    
-      
-
-    
-      
-  <div class="widget">
-    <h3 class="widget-title">标签</h3>
-    <div class="widget-body">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Malware/" rel="tag">Malware</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/macOS/" rel="tag">macOS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pwn/" rel="tag">pwn</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%89%E5%85%A8/" rel="tag">安全</a><span class="tag-list-count">1</span></li></ul>
-    </div>
-  </div>
-
-
-    
-      
-  <div class="widget">
-    <h3 class="widget-title">标签云</h3>
-    <div class="widget-body tagcloud">
-      <a href="/tags/Malware/" style="font-size: 13px;">Malware</a> <a href="/tags/macOS/" style="font-size: 13px;">macOS</a> <a href="/tags/pwn/" style="font-size: 14px;">pwn</a> <a href="/tags/%E5%AE%89%E5%85%A8/" style="font-size: 13px;">安全</a>
-    </div>
-  </div>
-
-    
-      
-  <div class="widget">
-    <h3 class="widget-title">归档</h3>
-    <div class="widget-body">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/06/">六月 2026</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">十一月 2022</a><span class="archive-list-count">2</span></li></ul>
-    </div>
-  </div>
-
-
-    
-      
-  <div class="widget">
-    <h3 class="widget-title">最新文章</h3>
-    <div class="widget-body">
-      <ul class="recent-post-list list-unstyled no-thumbnail">
+          <span class="dot"></span>
+          <span>pwn</span>
         
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                
-              </p>
-              <p class="item-title">
-                <a href="/2026/06/23/%E9%98%B4%E6%B2%9F%E9%87%8C%E7%BF%BB%E8%88%B9-%E4%B8%80%E6%AC%A1macOS-Odyssey-ClickFix%E6%84%9F%E6%9F%93%E5%A4%8D%E7%9B%98/" class="title">阴沟里翻船：一次 macOS Odyssey/ClickFix 感染复盘</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2026-06-23T12:19:11.000Z" itemprop="datePublished">2026-06-23</time>
-              </p>
-            </div>
-          </li>
-          
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                
-              </p>
-              <p class="item-title">
-                <a href="/2022/11/18/%E5%85%B3%E4%BA%8EMac%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E6%96%87%E7%AB%A0%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9D%91%E7%82%B9%E8%AE%B0%E5%BD%95/" class="title">关于Mac环境搭建文章的一些坑点记录</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2022-11-18T11:07:02.000Z" itemprop="datePublished">2022-11-18</time>
-              </p>
-            </div>
-          </li>
-          
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                
-              </p>
-              <p class="item-title">
-                <a href="/2022/11/16/Mac-M1%E6%9C%AC%E5%9C%B0%E9%9D%9Edocker%E5%8F%AF%E8%B0%83%E8%AF%95PWN%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" class="title">Mac&amp;M1本地非docker可调试PWN环境搭建</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2022-11-16T09:16:57.000Z" itemprop="datePublished">2022-11-16</time>
-              </p>
-            </div>
-          </li>
-          
-      </ul>
-    </div>
-  </div>
+      </div>
+      <h2 class="post-card-title">
+        <a href="/2022/11/18/%E5%85%B3%E4%BA%8EMac%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E6%96%87%E7%AB%A0%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9D%91%E7%82%B9%E8%AE%B0%E5%BD%95/">关于Mac环境搭建文章的一些坑点记录</a>
+      </h2>
+      
+      
+        <p class="post-card-summary">坑点一正常使用时发现，开机自动装载后，将一些题目文件直接在宿主机中放到共享文件夹时，在虚拟机中并不能实时更新，有以下两种解决方法：1.在虚拟机中使用mkdir新建目录，随后将需要共享的文件放进新目录，这样强制进行更新，但是比较麻烦。2.重新挂载，为了更简单的解决这一步，我写了一个shell脚本 12345#!/bin/bash#refresh the sha</p>
+      
+      <a class="read-link" href="/2022/11/18/%E5%85%B3%E4%BA%8EMac%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E6%96%87%E7%AB%A0%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9D%91%E7%82%B9%E8%AE%B0%E5%BD%95/" aria-label="Read 关于Mac环境搭建文章的一些坑点记录">Read note</a>
+    </article>
   
-
-    
-  </div>
-</aside>
-
-  
-  <main class="main" role="main">
-  
-  <div class="content article-list">
-    
-      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="article-header">
-    
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2026/06/23/%E9%98%B4%E6%B2%9F%E9%87%8C%E7%BF%BB%E8%88%B9-%E4%B8%80%E6%AC%A1macOS-Odyssey-ClickFix%E6%84%9F%E6%9F%93%E5%A4%8D%E7%9B%98/">阴沟里翻船：一次 macOS Odyssey/ClickFix 感染复盘</a>
-    </h1>
-  
-
-  </div>
-  
-  <p class="article-meta">
-    <span class="article-date">
-    <i class="icon icon-calendar-check"></i>
-	<a href="/2026/06/23/%E9%98%B4%E6%B2%9F%E9%87%8C%E7%BF%BB%E8%88%B9-%E4%B8%80%E6%AC%A1macOS-Odyssey-ClickFix%E6%84%9F%E6%9F%93%E5%A4%8D%E7%9B%98/" class="article-date">
-	  <time datetime="2026-06-23T12:19:11.000Z" itemprop="datePublished">6月 23</time>
-	</a>
-</span>
-    
-    
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>
-	<a class="article-tag-link-link" href="/tags/Malware/" rel="tag">Malware</a>, <a class="article-tag-link-link" href="/tags/macOS/" rel="tag">macOS</a>, <a class="article-tag-link-link" href="/tags/%E5%AE%89%E5%85%A8/" rel="tag">安全</a>
-  </span>
-
-
-    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2026/06/23/%E9%98%B4%E6%B2%9F%E9%87%8C%E7%BF%BB%E8%88%B9-%E4%B8%80%E6%AC%A1macOS-Odyssey-ClickFix%E6%84%9F%E6%9F%93%E5%A4%8D%E7%9B%98/#comments" class="article-comment-link">评论</a></span>
-    
-	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 2.2k(字)</span>
-	
-	
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 8(分)</span>
-	
-
-  </p>
-</article>
-
-    
-      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="article-header">
-    
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/11/18/%E5%85%B3%E4%BA%8EMac%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E6%96%87%E7%AB%A0%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9D%91%E7%82%B9%E8%AE%B0%E5%BD%95/">关于Mac环境搭建文章的一些坑点记录</a>
-    </h1>
-  
-
-  </div>
-  
-  <p class="article-meta">
-    <span class="article-date">
-    <i class="icon icon-calendar-check"></i>
-	<a href="/2022/11/18/%E5%85%B3%E4%BA%8EMac%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E6%96%87%E7%AB%A0%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9D%91%E7%82%B9%E8%AE%B0%E5%BD%95/" class="article-date">
-	  <time datetime="2022-11-18T11:07:02.000Z" itemprop="datePublished">11月 18</time>
-	</a>
-</span>
-    
-    
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>
-	<a class="article-tag-link-link" href="/tags/pwn/" rel="tag">pwn</a>
-  </span>
-
-
-    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/11/18/%E5%85%B3%E4%BA%8EMac%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E6%96%87%E7%AB%A0%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9D%91%E7%82%B9%E8%AE%B0%E5%BD%95/#comments" class="article-comment-link">评论</a></span>
-    
-	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 201(字)</span>
-	
-	
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1(分)</span>
-	
-
-  </p>
-</article>
-
-    
-      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="article-header">
-    
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/11/16/Mac-M1%E6%9C%AC%E5%9C%B0%E9%9D%9Edocker%E5%8F%AF%E8%B0%83%E8%AF%95PWN%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">Mac&amp;M1本地非docker可调试PWN环境搭建</a>
-    </h1>
-  
-
-  </div>
-  
-  <p class="article-meta">
-    <span class="article-date">
-    <i class="icon icon-calendar-check"></i>
-	<a href="/2022/11/16/Mac-M1%E6%9C%AC%E5%9C%B0%E9%9D%9Edocker%E5%8F%AF%E8%B0%83%E8%AF%95PWN%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" class="article-date">
-	  <time datetime="2022-11-16T09:16:57.000Z" itemprop="datePublished">11月 16</time>
-	</a>
-</span>
-    
-    
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>
-	<a class="article-tag-link-link" href="/tags/pwn/" rel="tag">pwn</a>
-  </span>
-
-
-    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/11/16/Mac-M1%E6%9C%AC%E5%9C%B0%E9%9D%9Edocker%E5%8F%AF%E8%B0%83%E8%AF%95PWN%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/#comments" class="article-comment-link">评论</a></span>
-    
-	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 1.8k(字)</span>
-	
-	
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 6(分)</span>
-	
-
-  </p>
-</article>
-
-    
-  </div>
-
-   
-</main>
-
-  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
-	
-	
-    <ul class="social-links">
-    	
-        <li><a href="https://github.com/mu-sec" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+    <article class="post-card">
+      <div class="post-card-meta">
+        <time datetime="2022-11-16T09:16:57.000Z">2022-11-16</time>
         
-    </ul>
-
-    <div class="copyright">
-    	
-        &copy; 2026 mu
+          <span class="dot"></span>
+          <span>pwn</span>
         
-        <div class="publishby">
-        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
-        </div>
+      </div>
+      <h2 class="post-card-title">
+        <a href="/2022/11/16/Mac-M1%E6%9C%AC%E5%9C%B0%E9%9D%9Edocker%E5%8F%AF%E8%B0%83%E8%AF%95PWN%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">Mac&amp;M1本地非docker可调试PWN环境搭建</a>
+      </h2>
+      
+      
+        <p class="post-card-summary">引言 由于最近又需要重新复习pwn，但是之前的老电脑跑起来像一台拖拉机一样所以考虑尝试在Mac上搭建一套可以完美（并不）使用的pwn环境，思路依然是虚拟机+目录共享。 众所周知由于M1换了架构，所以x86的程序在本地根本跑不起来，参考之前大佬的的方法搭建了python2和python3两个docker环境，可以跑exp打远程，本地无法调试，显然不符合需求，优</p>
+      
+      <a class="read-link" href="/2022/11/16/Mac-M1%E6%9C%AC%E5%9C%B0%E9%9D%9Edocker%E5%8F%AF%E8%B0%83%E8%AF%95PWN%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" aria-label="Read Mac&amp;M1本地非docker可调试PWN环境搭建">Read note</a>
+    </article>
+  
+</section>
+
+    
+  </div>
+</section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span>Published as field notes. Verify before reuse.</span>
+      <span>RSS: <a href="/atom.xml">atom.xml</a></span>
     </div>
-</footer>
-  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
-<script>
-window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
-</script>
+  </footer>
 
-<script src="/js/plugin.min.js"></script>
-
-
-<script src="/js/application.js"></script>
-
-
-    <script>
-(function (window) {
-    var INSIGHT_CONFIG = {
-        TRANSLATION: {
-            POSTS: '文章',
-            PAGES: '页面',
-            CATEGORIES: '分类',
-            TAGS: '标签',
-            UNTITLED: '(未命名)',
-        },
-        ROOT_URL: '/',
-        CONTENT_URL: '/content.json',
-    };
-    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
-})(window);
-</script>
-
-<script src="/js/insight.js"></script>
-
-
-
-
-
-
-   
-
-
-
-
-
-
-
-
-
+  <script src="/js/mu.js" defer></script>
 </body>
 </html>
