@@ -26,28 +26,28 @@
 <meta property="og:site_name" content="Why am I such a vegetable?">
 <meta property="og:description" content="引言　　由于最近又需要重新复习pwn，但是之前的老电脑跑起来像一台拖拉机一样所以考虑尝试在Mac上搭建一套可以完美（并不）使用的pwn环境，思路依然是虚拟机+目录共享。　　众所周知由于M1换了架构，所以x86的程序在本地根本跑不起来，参考之前大佬的的方法搭建了python2和python3两个docker环境，可以跑exp打远程，本地无法调试，显然不符合需求，优点是性能强，共享目录方便，确实是适合">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://mu-sec.github.io/2022/11/16/Mac-M1%E6%9C%AC%E5%9C%B0%E9%9D%9Edocker%E5%8F%AF%E8%B0%83%E8%AF%95PWN%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/%E9%85%8D%E7%BD%AE.jpg">
-<meta property="og:image" content="https://mu-sec.github.io/2022/11/16/Mac-M1%E6%9C%AC%E5%9C%B0%E9%9D%9Edocker%E5%8F%AF%E8%B0%83%E8%AF%95PWN%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/utm.jpg">
-<meta property="og:image" content="https://mu-sec.github.io/2022/11/16/Mac-M1%E6%9C%AC%E5%9C%B0%E9%9D%9Edocker%E5%8F%AF%E8%B0%83%E8%AF%95PWN%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/ubuntu.jpg">
-<meta property="og:image" content="https://mu-sec.github.io/2022/11/16/Mac-M1%E6%9C%AC%E5%9C%B0%E9%9D%9Edocker%E5%8F%AF%E8%B0%83%E8%AF%95PWN%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/UTM1.jpg">
-<meta property="og:image" content="https://mu-sec.github.io/2022/11/16/Mac-M1%E6%9C%AC%E5%9C%B0%E9%9D%9Edocker%E5%8F%AF%E8%B0%83%E8%AF%95PWN%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/UTM2.jpg">
-<meta property="og:image" content="https://mu-sec.github.io/2022/11/16/Mac-M1%E6%9C%AC%E5%9C%B0%E9%9D%9Edocker%E5%8F%AF%E8%B0%83%E8%AF%95PWN%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/UTM3.jpg">
-<meta property="og:image" content="https://mu-sec.github.io/2022/11/16/Mac-M1%E6%9C%AC%E5%9C%B0%E9%9D%9Edocker%E5%8F%AF%E8%B0%83%E8%AF%95PWN%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/UTM4.jpg">
-<meta property="og:image" content="https://mu-sec.github.io/2022/11/16/Mac-M1%E6%9C%AC%E5%9C%B0%E9%9D%9Edocker%E5%8F%AF%E8%B0%83%E8%AF%95PWN%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/UTM5.jpg">
-<meta property="og:image" content="https://mu-sec.github.io/2022/11/16/Mac-M1%E6%9C%AC%E5%9C%B0%E9%9D%9Edocker%E5%8F%AF%E8%B0%83%E8%AF%95PWN%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/UTM6.jpg">
-<meta property="og:image" content="https://mu-sec.github.io/2022/11/16/Mac-M1%E6%9C%AC%E5%9C%B0%E9%9D%9Edocker%E5%8F%AF%E8%B0%83%E8%AF%95PWN%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/UTM7.jpg">
-<meta property="og:image" content="https://mu-sec.github.io/2022/11/16/Mac-M1%E6%9C%AC%E5%9C%B0%E9%9D%9Edocker%E5%8F%AF%E8%B0%83%E8%AF%95PWN%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/ip.jpg">
-<meta property="og:image" content="https://mu-sec.github.io/2022/11/16/Mac-M1%E6%9C%AC%E5%9C%B0%E9%9D%9Edocker%E5%8F%AF%E8%B0%83%E8%AF%95PWN%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/UTM8.jpg">
-<meta property="og:image" content="https://mu-sec.github.io/2022/11/16/Mac-M1%E6%9C%AC%E5%9C%B0%E9%9D%9Edocker%E5%8F%AF%E8%B0%83%E8%AF%95PWN%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/share1.jpg">
-<meta property="og:image" content="https://mu-sec.github.io/2022/11/16/Mac-M1%E6%9C%AC%E5%9C%B0%E9%9D%9Edocker%E5%8F%AF%E8%B0%83%E8%AF%95PWN%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/share2.jpg">
-<meta property="og:image" content="https://mu-sec.github.io/2022/11/16/Mac-M1%E6%9C%AC%E5%9C%B0%E9%9D%9Edocker%E5%8F%AF%E8%B0%83%E8%AF%95PWN%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/lock.jpg">
-<meta property="og:image" content="https://mu-sec.github.io/2022/11/16/Mac-M1%E6%9C%AC%E5%9C%B0%E9%9D%9Edocker%E5%8F%AF%E8%B0%83%E8%AF%95PWN%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/pass.jpg">
+<meta property="og:image" content="https://mu-sec.github.io/%E9%85%8D%E7%BD%AE.jpg">
+<meta property="og:image" content="https://mu-sec.github.io/utm.jpg">
+<meta property="og:image" content="https://mu-sec.github.io/ubuntu.jpg">
+<meta property="og:image" content="https://mu-sec.github.io/UTM1.jpg">
+<meta property="og:image" content="https://mu-sec.github.io/UTM2.jpg">
+<meta property="og:image" content="https://mu-sec.github.io/UTM3.jpg">
+<meta property="og:image" content="https://mu-sec.github.io/UTM4.jpg">
+<meta property="og:image" content="https://mu-sec.github.io/UTM5.jpg">
+<meta property="og:image" content="https://mu-sec.github.io/UTM6.jpg">
+<meta property="og:image" content="https://mu-sec.github.io/UTM7.jpg">
+<meta property="og:image" content="https://mu-sec.github.io/ip.jpg">
+<meta property="og:image" content="https://mu-sec.github.io/UTM8.jpg">
+<meta property="og:image" content="https://mu-sec.github.io/share1.jpg">
+<meta property="og:image" content="https://mu-sec.github.io/share2.jpg">
+<meta property="og:image" content="https://mu-sec.github.io/lock.jpg">
+<meta property="og:image" content="https://mu-sec.github.io/pass.jpg">
 <meta property="article:published_time" content="2022-11-16T09:16:57.000Z">
 <meta property="article:modified_time" content="2022-11-16T10:14:31.563Z">
 <meta property="article:author" content="mu">
 <meta property="article:tag" content="pwn">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://mu-sec.github.io/2022/11/16/Mac-M1%E6%9C%AC%E5%9C%B0%E9%9D%9Edocker%E5%8F%AF%E8%B0%83%E8%AF%95PWN%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/%E9%85%8D%E7%BD%AE.jpg">
+<meta name="twitter:image" content="https://mu-sec.github.io/%E9%85%8D%E7%BD%AE.jpg">
   <!-- Canonical links -->
   <link rel="canonical" href="https://mu-sec.github.io/2022/11/16/Mac-M1%E6%9C%AC%E5%9C%B0%E9%9D%9Edocker%E5%8F%AF%E8%B0%83%E8%AF%95PWN%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.html">
   
@@ -63,7 +63,7 @@
   
   
   
-<meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 8.1.2"></head>
 
 
 <body class="main-center" itemscope itemtype="http://schema.org/WebPage">
@@ -306,63 +306,63 @@
         <h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>　　由于最近又需要重新复习pwn，但是之前的老电脑跑起来像一台拖拉机一样所以考虑尝试在Mac上搭建一套可以<strong>完美（并不）使用</strong>的pwn环境，思路依然是虚拟机+目录共享。<br>　　众所周知由于M1换了架构，所以x86的程序在本地根本跑不起来，参考之前大佬的的方法搭建了python2和python3两个docker环境，可以跑exp打远程，本地无法调试，显然不符合需求，优点是性能强，共享目录方便，确实是适合救急用，所以平时我会专门开一个桌面用于这两个docker pwn环境，细节可以参考大佬博客。<br>　　<code>https://blog.csdn.net/qq_25755011/article/details/115541221</code><br>　　短暂使用过后发现还是搭一个完美（并不）的环境靠谱，于是开始了折腾之路。</p>
 <p><em><strong>注意：本方法对虚拟机性能会造成较大损失，请根据个人需求判断是否可以接受</strong></em></p>
 <h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>　　首先放一下我的配置，M1 pro 32g内存，已更macOS 13。</p>
-<div align="center">
+<div align=center>
 
-<p><img src="/2022/11/16/Mac-M1%E6%9C%AC%E5%9C%B0%E9%9D%9Edocker%E5%8F%AF%E8%B0%83%E8%AF%95PWN%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/%E9%85%8D%E7%BD%AE.jpg"></p>
+<p><img src="/%E9%85%8D%E7%BD%AE.jpg"></p>
 </div>
 
 <p>　　虚拟机选用UTM，ubuntu选用ubuntu20.04.1 LTS</p>
-<div align="center">
+<div align=center>
 
-<p><img src="/2022/11/16/Mac-M1%E6%9C%AC%E5%9C%B0%E9%9D%9Edocker%E5%8F%AF%E8%B0%83%E8%AF%95PWN%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/utm.jpg"></p>
+<p><img src="/utm.jpg"></p>
 </div>
 
-<div align="center">
+<div align=center>
 
-<p><img src="/2022/11/16/Mac-M1%E6%9C%AC%E5%9C%B0%E9%9D%9Edocker%E5%8F%AF%E8%B0%83%E8%AF%95PWN%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/ubuntu.jpg"></p>
+<p><img src="/ubuntu.jpg"></p>
 </div>
 
 
 <h2 id="安装虚拟机"><a href="#安装虚拟机" class="headerlink" title="安装虚拟机"></a>安装虚拟机</h2><p>　　想要搞到完美的x86模拟环境肯定需要一台可以模拟x86指令集的虚拟机，由于pd和vm暂时都没有对软件模拟x86进行支持，所以这里我们选择安装UTM进行软件模拟虚拟机。这里直接在github下载安装即可，同时需要准备好ubuntu镜像。<br><code>https://github.com/utmapp/UTM/releases/latest/download/UTM.dmg　　#UTM虚拟机</code><br><code>https://releases.ubuntu.com/focal/ubuntu-20.04.5-desktop-amd64.iso　　#Ubuntu 20.04x86-64</code><br>　　安装完成之后，打开UTM，新建虚拟机，选择模拟（我这里已经安装完一个虚拟机，可能界面不同）  </p>
-<div align="center">
+<div align=center>
 
-<p><img src="/2022/11/16/Mac-M1%E6%9C%AC%E5%9C%B0%E9%9D%9Edocker%E5%8F%AF%E8%B0%83%E8%AF%95PWN%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/UTM1.jpg"></p>
+<p><img src="/UTM1.jpg"></p>
 </div>  
 
 <p>　　这里选择linux，继续往下走。</p>
-<div align="center">
+<div align=center>
 
-<p><img src="/2022/11/16/Mac-M1%E6%9C%AC%E5%9C%B0%E9%9D%9Edocker%E5%8F%AF%E8%B0%83%E8%AF%95PWN%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/UTM2.jpg"></p>
+<p><img src="/UTM2.jpg"></p>
 </div> 
 
 <p>　　这里选择启动光盘镜像，随后选择你下载的ubuntu的镜像文件，下一步。</p>
-<div align="center">
+<div align=center>
 
-<p><img src="/2022/11/16/Mac-M1%E6%9C%AC%E5%9C%B0%E9%9D%9Edocker%E5%8F%AF%E8%B0%83%E8%AF%95PWN%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/UTM3.jpg"></p>
+<p><img src="/UTM3.jpg"></p>
 </div> 
 
 <p>　　在这里的设置其实对虚拟机跑起来的性能影响不大，模拟出的cpu默认也不支持多核，所以默认即可，也可以把内存设置大一点、设置个4核图一个心理安慰，下一步。</p>
-<div align="center">
+<div align=center>
 
-<p><img src="/2022/11/16/Mac-M1%E6%9C%AC%E5%9C%B0%E9%9D%9Edocker%E5%8F%AF%E8%B0%83%E8%AF%95PWN%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/UTM4.jpg"></p>
+<p><img src="/UTM4.jpg"></p>
 </div> 
 
 <p>　　这里影响也不大，我们后期会使用本地目录共享挂载到虚拟机使用，这里的驱动器大小设置64、128看个人情况，下一步。</p>
-<div align="center">
+<div align=center>
 
-<p><img src="/2022/11/16/Mac-M1%E6%9C%AC%E5%9C%B0%E9%9D%9Edocker%E5%8F%AF%E8%B0%83%E8%AF%95PWN%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/UTM5.jpg"></p>
+<p><img src="/UTM5.jpg"></p>
 </div>
 
 <p>　　在你的本机创建一个目录，然后在这里选择他，这个目录就是以后宿主机与虚拟机的文件共享的目录，具体后面会详细说明，暂时先设置，但是不会生效。</p>
-<div align="center">
+<div align=center>
 
-<p><img src="/2022/11/16/Mac-M1%E6%9C%AC%E5%9C%B0%E9%9D%9Edocker%E5%8F%AF%E8%B0%83%E8%AF%95PWN%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/UTM6.jpg"></p>
+<p><img src="/UTM6.jpg"></p>
 </div> 
 
 <p>　　这里起一个自己喜欢的名字即可，保存后启动虚拟机，开始正常的ubuntu安装过程。</p>
-<div align="center">
+<div align=center>
 
-<p><img src="/2022/11/16/Mac-M1%E6%9C%AC%E5%9C%B0%E9%9D%9Edocker%E5%8F%AF%E8%B0%83%E8%AF%95PWN%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/UTM7.jpg"></p>
+<p><img src="/UTM7.jpg"></p>
 </div> 
 
 <p>安装完毕后，<strong>取消</strong>CD&#x2F;DVD的装载后，设置网络为<strong>桥接</strong>后进入系统。</p>
@@ -374,18 +374,18 @@
 <p>然后查看虚拟机ip</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># ifconfig </span><br><span class="line"># 如果报错，执行</span><br><span class="line"># sudo apt-get install net-tools</span><br></pre></td></tr></table></figure>
 <p>查看本机ip,第一个网卡里的ip就是我们虚拟机的ip，此时可以尝试用宿主机去ping一下，应该可以ping通。</p>
-<div align="center">
+<div align=center>
 
-<p><img src="/2022/11/16/Mac-M1%E6%9C%AC%E5%9C%B0%E9%9D%9Edocker%E5%8F%AF%E8%B0%83%E8%AF%95PWN%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/ip.jpg"></p>
+<p><img src="/ip.jpg"></p>
 </div> 
 
 <p>随后我们就可以用mac的终端<strong>新建远程连接</strong>到ubuntu。</p>
 <h2 id="配置共享文件夹"><a href="#配置共享文件夹" class="headerlink" title="配置共享文件夹"></a>配置共享文件夹</h2><p>　　这里我们采用WebDAV实现共享文件夹,安装SPICE、WebDAV。本节中建议所有操作先在root下进行，或者全程sudo。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># apt update</span><br><span class="line"># apt install spice-vdagent spice-webdavd </span><br></pre></td></tr></table></figure>
 <p>　　配置UTM共享选项，选择SPICE WebDAV</p>
-<div align="center">
+<div align=center>
 
-<p><img src="/2022/11/16/Mac-M1%E6%9C%AC%E5%9C%B0%E9%9D%9Edocker%E5%8F%AF%E8%B0%83%E8%AF%95PWN%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/UTM8.jpg"></p>
+<p><img src="/UTM8.jpg"></p>
 </div> 
 
 <p>此时进入系统后，可以访问网络中其他位置找到共享文件夹，该文件内容与此前设置的共享路径一致，但是此时的问题是命令行无法访问到该目录，仅可通过网络访问，地址如下</p>
@@ -396,16 +396,16 @@
 <p>安装完成后，可以直接使用以下指令挂载davfs</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># sudo mount -t davfs http://localhost:9843 &lt;your path&gt;</span><br><span class="line">e.g. </span><br><span class="line"># sudo mount -t davfs http://localhost:9843 /User/mu/mac-share</span><br></pre></td></tr></table></figure>
 <p>此时便可以访问挂载点，该操作可能会要求输入用户名和密码，该步骤输入什么都可以，UTM的共享本身没有身份校验，可以一路回车，也可以输入任意值，建议输入1，1</p>
-<div align="center">
+<div align=center>
 
-<p><img src="/2022/11/16/Mac-M1%E6%9C%AC%E5%9C%B0%E9%9D%9Edocker%E5%8F%AF%E8%B0%83%E8%AF%95PWN%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/share1.jpg"><br><img src="/2022/11/16/Mac-M1%E6%9C%AC%E5%9C%B0%E9%9D%9Edocker%E5%8F%AF%E8%B0%83%E8%AF%95PWN%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/share2.jpg"></p>
+<p><img src="/share1.jpg"><br><img src="/share2.jpg"></p>
 </div> 
 
 <h2 id="实现开机免密自动挂载"><a href="#实现开机免密自动挂载" class="headerlink" title="实现开机免密自动挂载"></a>实现开机免密自动挂载</h2><p>首先开启用户锁，删除use_locks前面的#并把1改为0，命令如下。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># sudo vim /etc/davfs2/davfs2.conf</span><br></pre></td></tr></table></figure>
-<div align="center">
+<div align=center>
 
-<p><img src="/2022/11/16/Mac-M1%E6%9C%AC%E5%9C%B0%E9%9D%9Edocker%E5%8F%AF%E8%B0%83%E8%AF%95PWN%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/lock.jpg"></p>
+<p><img src="/lock.jpg"></p>
 </div> 
 
 <p>之后，保存用户名和密码,在最下面新起一行添加</p>
@@ -413,9 +413,9 @@
 <p>在这里由于我们没有身份验证，所以直接使用1进行占位，添加  </p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># http://localhost:9843 1 1</span><br></pre></td></tr></table></figure>
 
-<div align="center">
+<div align=center>
 
-<p><img src="/2022/11/16/Mac-M1%E6%9C%AC%E5%9C%B0%E9%9D%9Edocker%E5%8F%AF%E8%B0%83%E8%AF%95PWN%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/pass.jpg"></p>
+<p><img src="/pass.jpg"></p>
 </div> 
 
 <p>保存退出，此时可以取消挂载，并重新挂载试一下，不需要回车了，可以直接挂载成功</p>
