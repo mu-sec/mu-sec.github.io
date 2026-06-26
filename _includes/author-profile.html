@@ -30,6 +30,12 @@
       {% if author.employer %}
         <li class="author__desktop"><i class="fas fa-fw fa-building-columns icon-pad-right" aria-hidden="true"></i>{{ author.employer }}</li>
       {% endif %}
+      {% if author.advisor %}
+        <li class="author__desktop"><i class="fas fa-fw fa-user-graduate icon-pad-right" aria-hidden="true"></i>Advisor: {{ author.advisor }}</li>
+      {% endif %}
+      {% if author.research %}
+        <li class="author__desktop"><i class="fas fa-fw fa-microscope icon-pad-right" aria-hidden="true"></i>{{ author.research }}</li>
+      {% endif %}
       {% if author.uri %}
         <li><a href="{{ author.uri }}"><i class="fas fa-fw fa-link icon-pad-right" aria-hidden="true"></i>{{ site.data.ui-text[site.locale].website_label | default: "Website" }}</a></li>
       {% endif %}
