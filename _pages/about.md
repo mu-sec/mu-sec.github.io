@@ -41,14 +41,17 @@ author_profile: true
 
 <div class="about-summary">
   <p>I am a Ph.D. student in the School of Cyber Science and Technology at Shandong University, advised by Prof. Shanqing Guo.</p>
-  <p>My research focuses on mobile and systems security. I study security issues in real-world mobile platforms, applications, device ecosystems, and underground cybercrime ecosystems through program analysis, empirical measurement, and vulnerability discovery.</p>
+  <p>My research focuses on mobile and systems security. I study security issues in real-world mobile platforms, applications, device ecosystems, and underground cybercrime ecosystems, using program analysis, empirical measurement, and vulnerability discovery.</p>
+  <p>I am also interested in embedded systems security and AI for Security, especially LLM-assisted vulnerability discovery.</p>
 </div>
 
 <div class="about-tags">
   <span class="about-tag about-tag--accent">Expected graduation: July 2027</span>
   <span class="about-tag">Mobile Security</span>
   <span class="about-tag">Systems Security</span>
+  <span class="about-tag">Embedded Systems Security</span>
   <span class="about-tag">Program Analysis</span>
   <span class="about-tag">Empirical Measurement</span>
   <span class="about-tag">Vulnerability Discovery</span>
+  <span class="about-tag">AI for Security</span>
 </div>
