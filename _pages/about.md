@@ -43,7 +43,7 @@ author_profile: true
   <p>I am a Ph.D. student in the School of Cyber Science and Technology at Shandong University, advised by Prof. Shanqing Guo.</p>
   <p>My research focuses on mobile and systems security. I study security issues in real-world mobile platforms, applications, device ecosystems, and underground cybercrime ecosystems, using program analysis, empirical measurement, and vulnerability discovery.</p>
   <p>I am also interested in embedded systems security and AI for Security, especially LLM-assisted vulnerability discovery.</p>
-  <p>I am open to research discussions and potential collaborations. If you are interested in my research, please feel free to <a href="mailto:liyilin22@mail.sdu.edu.cn">contact me</a>.</p>
+  <p>If you are interested in my research, please feel free to <a href="mailto:liyilin22@mail.sdu.edu.cn">contact me</a>.</p>
 </div>
 
 <div class="about-tags">
