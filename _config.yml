@@ -2,8 +2,8 @@ locale: "en-US"
 site_theme: "default"
 title: "Yilin Li / Homepage"
 title_separator: "-"
-name: &name "Yilin Li"
-description: &description "Personal homepage of Yilin Li"
+name: &name "Yilin Li (李溢林)"
+description: &description "Yilin Li (李溢林) is a Ph.D. student at Shandong University working on mobile and systems security, program analysis, empirical measurement, and vulnerability discovery."
 url: https://mu-sec.github.io
 baseurl: ""
 repository: "mu-sec/mu-sec.github.io"
@@ -17,7 +17,7 @@ author:
   advisor:
   research:
   uri:
-  email: "liyilin22@mail.sdu.edu.cn"
+  email: "yilinli.mu@gmail.com"
   academia:
   arxiv:
   googlescholar:

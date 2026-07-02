@@ -18,5 +18,55 @@
 <link rel="manifest" href="{{ base_path }}/images/manifest.json"/>
 <link rel="icon" href="/images/favicon.ico"/>
 <meta name="theme-color" content="var(--global-bg-color)"/>
+<meta name="author" content="Yilin Li (李溢林)"/>
+<meta name="keywords" content="Yilin Li, 李溢林, Li Yilin, Shandong University, mobile security, systems security, vulnerability discovery, program analysis, empirical measurement, embedded systems security, AI for Security"/>
+
+{% if page.url == "/" %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  "url": "https://mu-sec.github.io/",
+  "name": "Yilin Li (李溢林)",
+  "mainEntity": {
+    "@type": "Person",
+    "@id": "https://mu-sec.github.io/#person",
+    "name": "Yilin Li",
+    "alternateName": ["李溢林", "Li Yilin"],
+    "url": "https://mu-sec.github.io/",
+    "image": "https://mu-sec.github.io/images/headshot.png",
+    "email": [
+      "mailto:yilinli.mu@gmail.com",
+      "mailto:202217060@mail.sdu.edu.cn",
+      "mailto:liyilin22@mail.sdu.edu.cn"
+    ],
+    "jobTitle": "Ph.D. Student",
+    "affiliation": {
+      "@type": "CollegeOrUniversity",
+      "name": "Shandong University",
+      "url": "https://www.sdu.edu.cn/"
+    },
+    "memberOf": {
+      "@type": "EducationalOrganization",
+      "name": "School of Cyber Science and Technology, Shandong University"
+    },
+    "knowsAbout": [
+      "Mobile Security",
+      "Systems Security",
+      "Embedded Systems Security",
+      "Program Analysis",
+      "Empirical Measurement",
+      "Vulnerability Discovery",
+      "AI for Security",
+      "LLM-assisted Vulnerability Discovery"
+    ],
+    "sameAs": [
+      "https://github.com/mu-sec"
+    ],
+    "description": "Yilin Li (李溢林) is a Ph.D. student at Shandong University advised by Prof. Shanqing Guo. His research focuses on mobile and systems security, program analysis, empirical measurement, and vulnerability discovery."
+  }
+}
+</script>
+{% endif %}
 
 <!-- end custom head snippets -->

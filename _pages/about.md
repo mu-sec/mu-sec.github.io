@@ -1,6 +1,8 @@
 ---
 permalink: /
 title: "About me"
+seo_title: "Yilin Li (李溢林) | Ph.D. Student at Shandong University | Mobile and Systems Security"
+description: "Yilin Li (李溢林) is a Ph.D. student at Shandong University advised by Prof. Shanqing Guo. His research focuses on mobile and systems security, program analysis, empirical measurement, and vulnerability discovery."
 author_profile: true
 ---
 
@@ -43,7 +45,7 @@ author_profile: true
   <p>I am a Ph.D. student in the School of Cyber Science and Technology at Shandong University, advised by Prof. Shanqing Guo.</p>
   <p>My research focuses on mobile and systems security. I study security issues in real-world mobile platforms, applications, device ecosystems, and underground cybercrime ecosystems, using program analysis, empirical measurement, and vulnerability discovery.</p>
   <p>I am also interested in embedded systems security and AI for Security, especially LLM-assisted vulnerability discovery.</p>
-  <p>If you are interested in my research, please feel free to <a href="mailto:liyilin22@mail.sdu.edu.cn">contact me</a>.</p>
+  <p>If you are interested in my research, please feel free to <a href="mailto:yilinli.mu@gmail.com">contact me</a>.</p>
 </div>
 
 <div class="about-tags">
