@@ -1,7 +1,7 @@
 ---
 permalink: /
 title: "About me"
-seo_title: "Yilin Li (李溢林) | Ph.D. Student at Shandong University | Mobile and Systems Security"
+seo_title: "Yilin Li (李溢林) - Ph.D. Student at Shandong University - Mobile and Systems Security"
 description: "Yilin Li (李溢林) is a Ph.D. student at Shandong University advised by Prof. Shanqing Guo. His research focuses on mobile and systems security, program analysis, empirical measurement, and vulnerability discovery."
 author_profile: true
 ---
