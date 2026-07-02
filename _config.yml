@@ -76,7 +76,9 @@ atom_feed:
   path:
 
 analytics:
-  provider: "false"
+  provider: "google-analytics-4"
+  google:
+    tracking_id: "G-1V7R3G10NK"
 
 include:
   - _pages
