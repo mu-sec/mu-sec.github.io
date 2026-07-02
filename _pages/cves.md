@@ -31,12 +31,6 @@ description: "Discovered CVEs by Yilin Li, including CVE-2026-0081 in Android NF
   margin-bottom: 0.45rem;
 }
 
-.cve-card__status {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.35rem;
-}
-
 .cve-card h2 {
   margin: 0;
   font-size: 1.05rem;
@@ -79,12 +73,6 @@ description: "Discovered CVEs by Yilin Li, including CVE-2026-0081 in Android NF
   color: #9b1c1c;
 }
 
-.cve-badge--reward {
-  border-color: #86efac;
-  background: #f0fdf4;
-  color: #166534;
-}
-
 .cve-meta {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
@@ -117,10 +105,7 @@ description: "Discovered CVEs by Yilin Li, including CVE-2026-0081 in Android NF
   <article class="cve-card">
     <div class="cve-card__head">
       <h2><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-0081">CVE-2026-0081</a></h2>
-      <div class="cve-card__status">
-        <span class="cve-badge cve-badge--severity">Android Severity: High</span>
-        <span class="cve-badge cve-badge--reward">USD 7,000 Reward</span>
-      </div>
+      <span class="cve-badge cve-badge--severity">Android Severity: High</span>
     </div>
 
     <p class="cve-summary"><strong>Android NFC event spoofing vulnerability.</strong> A missing permission check in Android NFC could allow spoofing an NFC event, leading to local escalation of privilege without additional execution privileges or user interaction. The issue is listed as High severity in Android's security release notes, assigned a CVSS v4.0 base score of 10.0 (Critical), and received a USD 7,000 vulnerability reward.</p>
@@ -131,7 +116,6 @@ description: "Discovered CVEs by Yilin Li, including CVE-2026-0081 in Android NF
       <span class="cve-badge">EoP</span>
       <span class="cve-badge">CWE-862</span>
       <span class="cve-badge cve-badge--critical">CVSS v4.0: 10.0 Critical</span>
-      <span class="cve-badge cve-badge--reward">Vulnerability Reward</span>
     </div>
 
     <dl class="cve-meta">
@@ -150,10 +134,6 @@ description: "Discovered CVEs by Yilin Li, including CVE-2026-0081 in Android NF
       <div>
         <dt>Published</dt>
         <dd>June 17, 2026</dd>
-      </div>
-      <div>
-        <dt>Reward</dt>
-        <dd>USD 7,000</dd>
       </div>
     </dl>
 
