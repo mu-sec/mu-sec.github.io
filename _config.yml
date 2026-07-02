@@ -10,7 +10,7 @@ repository: "mu-sec/mu-sec.github.io"
 
 author:
   avatar: "headshot.png"
-  name: "Yilin Li"
+  name: "Yilin Li (李溢林)"
   bio: "Ph.D. Student @ Shandong University"
   location:
   employer: "School of Cyber Science and Technology, Shandong University"
@@ -33,7 +33,7 @@ author:
   bitbucket:
   codepen:
   dribbble:
-  github:
+  github: "mu-sec"
   kaggle:
   stackoverflow:
   artstation:
