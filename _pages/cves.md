@@ -3,8 +3,8 @@ layout: archive
 title: "Discovered CVEs"
 permalink: /cves/
 author_profile: true
-seo_title: "Discovered CVEs - Yilin Li"
-description: "Discovered CVEs by Yilin Li, including CVE-2026-0081 in Android NFC and a USD 7,000 vulnerability reward."
+seo_title: "CVE-2026-0081 - Android NFC Vulnerability - Yilin Li"
+description: "CVE-2026-0081 is an Android NFC event spoofing vulnerability discovered by Yilin Li and collaborators, officially acknowledged by the Android Security Team."
 ---
 
 <style>
@@ -85,6 +85,12 @@ description: "Discovered CVEs by Yilin Li, including CVE-2026-0081 in Android NF
   color: #166534;
 }
 
+.cve-badge--official {
+  border-color: #93c5fd;
+  background: #eff6ff;
+  color: #1d4ed8;
+}
+
 .cve-meta {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
@@ -120,6 +126,7 @@ description: "Discovered CVEs by Yilin Li, including CVE-2026-0081 in Android NF
       <div class="cve-card__status">
         <span class="cve-badge cve-badge--severity">Android Severity: High</span>
         <span class="cve-badge cve-badge--reward">USD 7,000 Reward</span>
+        <span class="cve-badge cve-badge--official">Official Android Acknowledgement</span>
       </div>
     </div>
 
@@ -150,8 +157,12 @@ description: "Discovered CVEs by Yilin Li, including CVE-2026-0081 in Android NF
         <dt>Published</dt>
         <dd>June 17, 2026</dd>
       </div>
+      <div>
+        <dt>Official Acknowledgement</dt>
+        <dd>Android Security Acknowledgements, June 2026</dd>
+      </div>
     </dl>
 
-    <p class="cve-links">[<a href="https://nvd.nist.gov/vuln/detail/CVE-2026-0081">NVD</a>] [<a href="https://source.android.com/docs/security/bulletin/android-17">Android Security Release Notes</a>] [<a href="https://www.cve.org/CVERecord?id=CVE-2026-0081">CVE Record</a>]</p>
+    <p class="cve-links">[<a href="https://nvd.nist.gov/vuln/detail/CVE-2026-0081">NVD</a>] [<a href="https://source.android.com/docs/security/bulletin/android-17">Android Security Release Notes</a>] [<a href="https://source.android.com/docs/security/overview/acknowledgements">Android Security Acknowledgements</a>] [<a href="https://www.cve.org/CVERecord?id=CVE-2026-0081">CVE Record</a>]</p>
   </article>
 </div>
